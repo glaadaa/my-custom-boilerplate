@@ -1,6 +1,6 @@
 function SideBar() {
   return (
-    <div>
+    <div className="fixed left-0 top-0 h-[100vh] overflow-y-auto w-[300px]">
       <ul>
         <li>
           <a href="/fetch-with-useEffect">Fetch with useEffect</a>
