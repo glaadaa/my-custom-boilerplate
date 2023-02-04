@@ -1,12 +1,16 @@
-import React from "react";
 import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
-function Layout({ children }: { children?: React.ReactNode }) {
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
+function Layout() {
   return (
     <div className="pl-[300px]">
       <SideBar />
       <div>
-        <Outlet />
+        <QueryClientProvider client={queryClient}>
+          <Outlet />
+        </QueryClientProvider>
       </div>
     </div>
   );
