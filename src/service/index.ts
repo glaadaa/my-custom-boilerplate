@@ -1,5 +1,6 @@
 import axios from 'axios';
 
-export async function fetchPosts () {
-  return await axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => res.data);
+export async function fetchProducts () {
+  const response = await axios.get("https://dummyjson.com/products");
+  return response.data.products;
 }

@@ -5,9 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 const queryClient = new QueryClient();
 function Layout() {
   return (
-    <div className="pl-[300px]">
+    <div className="pl-[240px]">
       <SideBar />
-      <div>
+      <div className="py-5 px-5">
         <QueryClientProvider client={queryClient}>
           <Outlet />
         </QueryClientProvider>

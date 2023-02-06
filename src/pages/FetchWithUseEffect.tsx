@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-import Product, { IProduct } from "../components/Product";
+import { IProduct } from "../components/Product";
+import ProductList from "../components/ProductList";
+import { fetchProducts } from "../service";
 
 function FetchWithUseEffect() {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -8,11 +9,9 @@ function FetchWithUseEffect() {
   const [error, setError] = useState<any>(null);
   const fetchData = async () => {
     try {
-      const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/posts"
-      );
+      const products: IProduct[] = await fetchProducts();
       setLoading(false);
-      setProducts(response.data);
+      setProducts(products);
     } catch (error: any) {
       setLoading(false);
       setError(error);
@@ -29,9 +28,7 @@ function FetchWithUseEffect() {
 
   return (
     <div>
-      {products.map((item: IProduct, index: number) => {
-        return <Product product={item} key={index} />;
-      })}
+      <ProductList products={products} />
     </div>
   );
 }

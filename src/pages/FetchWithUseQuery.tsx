@@ -1,7 +1,6 @@
-import axios from "axios";
-import Product, { IProduct } from "../components/Product";
+import ProductList from "../components/ProductList";
 import { useQuery } from "@tanstack/react-query";
-import { fetchPosts } from "../service";
+import { fetchProducts } from "../service";
 
 function FetchWithUseQuery() {
   const {
@@ -10,8 +9,8 @@ function FetchWithUseQuery() {
     isLoading,
   }: { status: any; error: any; data: any; isLoading: boolean } = useQuery({
     queryKey: ["fetchPosts"],
-    queryFn: fetchPosts,
-    staleTime: 1000 * 60,
+    queryFn: fetchProducts,
+    staleTime: 1000 * 60 * 5,
   });
 
   if (error) return <div>{error.message}</div>;
@@ -19,10 +18,8 @@ function FetchWithUseQuery() {
   if (isLoading) return <h3>Loading...</h3>;
 
   return (
-    <div>
-      {data.map((item: IProduct, index: number) => {
-        return <Product product={item} key={index} />;
-      })}
+    <div className="">
+      <ProductList products={data} />
     </div>
   );
 }
