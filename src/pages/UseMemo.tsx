@@ -1,15 +1,11 @@
 import { useState, useMemo } from 'react'
 export default function UseReducer() {
   const [number, setNumber] = useState<number>(0)
-  // const [doubler, setDoubler] = useState<number>(0);
-  const [text, setText] = useState<string>('')
-  const doubler = useMemo(() => {
-    return calculation(number)
+  const [isDark, setIsDark] = useState<boolean>(false)
+  const value = useMemo(() => {
+    calculation()
+    return number * 2
   }, [number])
-  // const doubler = calculation(number);
-  // useEffect(() => {
-  //   setDoubler(calculation(number));
-  // }, [number]);
   return (
     <div>
       <input
@@ -18,20 +14,22 @@ export default function UseReducer() {
         className="border border-zinc-300"
         value={number}
       />
-      <h3>{doubler}</h3>
+      <span>{value}</span>
+      <br />
       <input
-        type="text"
-        onChange={(e) => setText(e.target.value)}
-        className="border border-zinc-300"
-        value={text}
+        type="checkbox"
+        checked={isDark}
+        onChange={() => setIsDark((prev) => !prev)}
       />
+      <div
+        className={`w-[200px] h-[50px] ${isDark ? 'bg-black' : 'bg-white'}`}
+      ></div>
     </div>
   )
 }
 
-function calculation(val: number) {
+function calculation() {
   for (let i = 0; i <= 1000000000; i++) {
     continue
   }
-  return val * 2
 }
