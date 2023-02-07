@@ -16,7 +16,7 @@ function SideBar() {
         </li>
       </ul>
     </div>
-  );
+  )
 }
 
-export default SideBar;
+export default SideBar

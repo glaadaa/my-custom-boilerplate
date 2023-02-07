@@ -1,16 +1,16 @@
 export interface IProduct {
-  id: number;
-  title: string;
-  body: string;
-  description: string;
-  price: number;
-  discountPercentage: string;
-  rating: number;
-  stock: number;
-  brand: string;
-  category: string;
-  thumbnail: string;
-  images: string[];
+  id: number
+  title: string
+  body: string
+  description: string
+  price: number
+  discountPercentage: string
+  rating: number
+  stock: number
+  brand: string
+  category: string
+  thumbnail: string
+  images: string[]
 }
 export default function Product({ product }: { product: IProduct }) {
   return (
@@ -25,5 +25,5 @@ export default function Product({ product }: { product: IProduct }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

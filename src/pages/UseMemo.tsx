@@ -1,12 +1,12 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from 'react'
+import FetchWithUseEffect from './FetchWithUseEffect'
 export default function UseReducer() {
-  console.log("Rerendered");
-  const [number, setNumber] = useState<number>(0);
+  const [number, setNumber] = useState<number>(0)
   // const [doubler, setDoubler] = useState<number>(0);
-  const [text, setText] = useState<string>("");
+  const [text, setText] = useState<string>('')
   const doubler = useMemo(() => {
-    return calculation(number);
-  }, [number]);
+    return calculation(number)
+  }, [number])
   // const doubler = calculation(number);
   // useEffect(() => {
   //   setDoubler(calculation(number));
@@ -27,10 +27,12 @@ export default function UseReducer() {
         value={text}
       />
     </div>
-  );
+  )
 }
 
 function calculation(val: number) {
-  for (let i: number = 0; i <= 1000000000; i++) {}
-  return val * 2;
+  for (let i = 0; i <= 1000000000; i++) {
+    continue
+  }
+  return val * 2
 }

@@ -1,4 +1,4 @@
-import "./App.css";
+import './App.css'
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         </li>
       </ul>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

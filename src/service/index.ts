@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from 'axios'
 
-export async function fetchProducts () {
-  const response = await axios.get("https://dummyjson.com/products");
-  return response.data.products;
+export async function fetchProducts() {
+  const response = await axios.get('https://dummyjson.com/products')
+  return response.data.products
 }
