@@ -18,7 +18,6 @@ function FetchWithUseEffect() {
     }
   }
   useEffect(() => {
-    console.log('mounted')
     fetchData()
   }, [])
 

@@ -1,5 +1,4 @@
 import { useState, useMemo } from 'react'
-import FetchWithUseEffect from './FetchWithUseEffect'
 export default function UseReducer() {
   const [number, setNumber] = useState<number>(0)
   // const [doubler, setDoubler] = useState<number>(0);
