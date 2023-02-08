@@ -39,11 +39,11 @@
     "vite": "^4.1.1"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
+    "./src/**/*.{js,jsx,ts,tsx}": [
       "eslint src --max-warnings=0 .",
       "prettier -w ."
     ],
-    "src/**/*.{json,css,scss,md}": [
+    "./src/**/*.{json,css,scss,md}": [
       "prettier -w ."
     ]
   }
