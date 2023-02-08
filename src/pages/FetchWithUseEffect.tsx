@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { IProduct } from '../components/Product'
-import ProductList from '../components/ProductList'
-import { fetchProducts } from '../service'
+import { IProduct } from '@/components/Product'
+import ProductList from '@/components/ProductList'
+import { fetchProducts } from '@/service'
 
 function FetchWithUseEffect() {
   const [products, setProducts] = useState<IProduct[]>([])
