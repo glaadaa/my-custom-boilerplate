@@ -40,9 +40,10 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint src --max-warnings=0 ."
+      "eslint src --max-warnings=0 .",
+      "prettier -w ."
     ],
-    "src/**/*.{json,js,jsx,ts,tsx}": [
+    "src/**/*.{json,css,scss,md}": [
       "prettier -w ."
     ]
   }
