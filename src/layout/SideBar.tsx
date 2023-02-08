@@ -3,7 +3,7 @@ function SideBar() {
     <div className="fixed left-0 top-0 h-[100vh] overflow-y-auto w-[240px] border border-r border-zinc-200 px-5 py-5">
       <ul>
         <li>
-          <a href="/fetch-with-useEffect">Fetch with useEffect</a>
+          <a href="/fetch-with-useEffect">Fetch with useEffect asdasd</a>
         </li>
         <li>
           <a href="/fetch-with-useQuery">Fetch with useQuery</a>
