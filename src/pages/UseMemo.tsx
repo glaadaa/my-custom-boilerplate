@@ -21,6 +21,7 @@ export default function UseReducer() {
         checked={isDark}
         onChange={() => setIsDark((prev) => !prev)}
       />
+      <h3>test</h3>
       <div
         className={`w-[200px] h-[50px] ${isDark ? 'bg-black' : 'bg-white'}`}
       ></div>
