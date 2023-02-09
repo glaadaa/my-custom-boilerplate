@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo 'running pre-commiting checks...'
-npx lint-staged -q
+exec 1> /dev/tty
+npx lint-staged
