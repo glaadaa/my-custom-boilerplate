@@ -1,11 +1,16 @@
 import { useState, useMemo } from 'react'
+
 export default function UseReducer() {
   const [number, setNumber] = useState<number>(0)
+
   const [isDark, setIsDark] = useState<boolean>(false)
+
   const value = useMemo(() => {
     calculation()
+
     return number * 2
   }, [number])
+
   return (
     <div>
       <input
@@ -14,14 +19,19 @@ export default function UseReducer() {
         className="border border-zinc-300"
         value={number}
       />
+
       <span>{value}</span>
+
       <br />
+
       <input
         type="checkbox"
         checked={isDark}
         onChange={() => setIsDark((prev) => !prev)}
       />
+
       <h3>test sadl</h3>
+
       <div
         className={`w-[200px] h-[50px] ${isDark ? 'bg-black' : 'bg-white'}`}
       ></div>
