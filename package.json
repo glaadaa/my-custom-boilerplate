@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint src --max-warnings=0 .",
     "lint:fix": "eslint src --fix .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "prettier -w ."
   },
   "dependencies": {
     "@tanstack/react-query": "^4.24.4",
