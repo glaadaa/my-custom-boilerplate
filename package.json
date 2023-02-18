@@ -49,7 +49,9 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": "eslint src --max-warnings=0 .",
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": "prettier -w ."
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "eslint src --max-warnings=0 .",
+      "prettier -w ."
+    ]
   }
 }
