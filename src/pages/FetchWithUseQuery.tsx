@@ -1,6 +1,6 @@
 import ProductList from '../components/ProductList'
 import { useQuery } from '@tanstack/react-query'
-import { fetchProducts } from '../service'
+import { fetchData } from '../service'
 
 function FetchWithUseQuery() {
   const {
@@ -9,10 +9,9 @@ function FetchWithUseQuery() {
     isLoading,
   }: { status: any; error: any; data: any; isLoading: boolean } = useQuery({
     queryKey: ['fetchPosts'],
-    queryFn: fetchProducts,
+    queryFn: async () => await fetchData('/products?limit=100'),
     staleTime: 1000 * 60 * 5,
   })
-
   if (error) return <div>{error.message}</div>
 
   if (isLoading) return <h3>Loading...</h3>

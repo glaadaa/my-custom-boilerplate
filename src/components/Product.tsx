@@ -1,22 +1,20 @@
 export interface IProduct {
   id: number
   title: string
-  body: string
   description: string
   price: number
-  discountPercentage: string
-  rating: number
-  stock: number
-  brand: string
   category: string
-  thumbnail: string
-  images: string[]
+  image: string
 }
 export default function Product({ product }: { product: IProduct }) {
   return (
-    <div className="drop-shadow-lg border border-zinc-200 rounded-md overflow-hidden cursor-pointer">
-      <div className="">
-        <img src={product.thumbnail} className="aspect-[3/2] object-cover" />
+    <div className="drop-shadow-lg border border-zinc-200 rounded-md overflow-hidden cursor-pointer bg-white">
+      <div className="p-5">
+        <img
+          src={product.image}
+          className="aspect-[3/2] object-cover"
+          loading="lazy"
+        />
       </div>
       <div className="p-2">
         <div className="flex flex-row justify-between">

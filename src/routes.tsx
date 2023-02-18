@@ -1,8 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import Layout from './layout/Layout'
-import FetchWithUseEffect from './pages/FetchWithUseEffect'
 import FetchWithUseQuery from './pages/FetchWithUseQuery'
-import UseMemo from './pages/UseMemo'
+import ProductDetail from './pages/ProductDetail'
 
 const route = createBrowserRouter([
   {
@@ -10,16 +9,12 @@ const route = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: '/fetch-with-useEffect',
-        element: <FetchWithUseEffect />,
-      },
-      {
-        path: '/fetch-with-useQuery',
+        index: true,
         element: <FetchWithUseQuery />,
       },
       {
-        path: '/use-memo',
-        element: <UseMemo />,
+        path: '/product/:id',
+        element: <ProductDetail />,
       },
     ],
   },

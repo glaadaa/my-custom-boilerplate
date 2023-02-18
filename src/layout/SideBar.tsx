@@ -1,20 +1,23 @@
+import UseCategory from '../hooks/useCategory'
+
 function SideBar() {
+  const { data, isLoading, error } = UseCategory()
   return (
-    <div className="fixed left-0 top-0 h-[100vh] overflow-y-auto w-[240px] border border-r border-zinc-200 px-5 py-5">
-      <ul>
-        <li>
-          <a href="/fetch-with-useEffect">Fetch with useEffect asdasd</a>
-        </li>
-        <li>
-          <a href="/fetch-with-useQuery">Fetch with useQuery</a>
-        </li>
-        <li>
-          <a href="/use-memo">Use memo</a>
-        </li>
-        <li>
-          <a href="/use-effect">Use effect</a>
-        </li>
-      </ul>
+    <div className="fixed left-0 top-0 h-[100vh] overflow-y-auto w-[240px] border border-r border-zinc-200 px-5 py-5 bg-white">
+      <h3 className="text-lg text-black font-bold uppercase">All categories</h3>
+      {error ? <div>{error.message}</div> : null}
+      {isLoading ? <span>Loading</span> : null}
+      {data ? (
+        <ul className="mt-10">
+          {data.map((category: string, index: number) => {
+            return (
+              <li key={index} className="uppercase text-tiny py-2">
+                <a href="/">{category}</a>
+              </li>
+            )
+          })}
+        </ul>
+      ) : null}
     </div>
   )
 }
