@@ -19,7 +19,7 @@ export default function Product({ product }: { product: IProduct }) {
       <div className="p-2">
         <div className="flex flex-row justify-between">
           <h3>{product.title}</h3>
-          <span className="">${product.price} asdasd</span>
+          <span className="">${product.price}</span>
         </div>
       </div>
     </div>
