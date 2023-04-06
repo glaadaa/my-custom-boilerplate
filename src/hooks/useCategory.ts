@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+
 import { fetchData } from '../service'
 
 function UseCategory() {
